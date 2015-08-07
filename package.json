@@ -1,6 +1,6 @@
 {
   "name": "multikey-store",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "title": "MultiKeyStore",
   "description": "A hierarchical in-memory Store mechanism.",
   "keywords": [
