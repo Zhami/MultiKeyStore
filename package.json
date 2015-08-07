@@ -1,0 +1,38 @@
+{
+  "name": "MultiKeyStore",
+  "version": "0.0.1",
+  "title": "MultiKeyStore",
+  "description": "A hierarchical in-memory Store mechanism.",
+  "keywords": [
+    "in-memory",
+    "store",
+    "multi-key"
+  ],
+  "main": "./index.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "homepage": "https://github.com/zhami/MultiKeyStore",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zhami/MultiKeyStore.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhami/MultiKeyStore/issues"
+  },
+  "licenses": "MIT",
+  "author": {
+    "name": "Stuart Malin",
+    "url": "https://github.com/zhami",
+    "email": "stuart@EnvisixLabs.com"
+  },
+   "scripts": {},
+    "maintainers": [
+    {
+      "name": "Stuart Malin",
+      "email": "stuart@EnvisixLabs.com"
+    }
+  ],
+  "directories": {},
+  "dependencies": {}
+}
