@@ -1,5 +1,5 @@
 {
-  "name": "MultiKeyStore",
+  "name": "multikey-store",
   "version": "0.0.1",
   "title": "MultiKeyStore",
   "description": "A hierarchical in-memory Store mechanism.",

@@ -1,8 +1,10 @@
-var MultiKey = require('../lib/MultiKey.js');
+var MultiKeyStore = require('../lib/MultiKeyStore.js');
 
 keyNames = ['city', 'name'];
 
-var store = new MultiKey(keyNames);
+var store = new MultiKeyStore(keyNames);
+
+console.log('\n====== add items =======');
 
 var item = {
 	name: 'bob'
@@ -34,7 +36,9 @@ item = {
 };
 store.addItem(item);
 
-/*
+
+console.log('\n====== walk =======');
+
 var walker = store.getWalker();
 var i = 0;
 while (item = walker.getNextItem()) {
@@ -44,7 +48,8 @@ while (item = walker.getNextItem()) {
 		process.exit();		
 	}
 }
-*/
+
+console.log('\n====== getItemForKeyValues =======');
 
 var keyValues;
 keyValues = {city: 'sf', name: 'sue'};
