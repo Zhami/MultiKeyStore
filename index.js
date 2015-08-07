@@ -13,6 +13,4 @@
 // exports
 //===========================
 
-exports = module.exports = {
-	MultiKeyStore	: require('./lib/MultiKeyStore.js')
-};
+exports = module.exports = require('./lib/MultiKeyStore.js');

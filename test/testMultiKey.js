@@ -1,4 +1,4 @@
-var MultiKeyStore = require('../lib/MultiKeyStore.js');
+var MultiKeyStore = require('..');
 
 keyNames = ['city', 'name'];
 
