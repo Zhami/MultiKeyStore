@@ -1,12 +1,21 @@
 var MultiKeyStore = require('..');
 
+var i;
+var item;
+var keyNames;
+var keyValues;
+var result;
+var store;
+var walker;
+
+console.log('====== create store =======');
+
 keyNames = ['city', 'name'];
+store = new MultiKeyStore(keyNames);
 
-var store = new MultiKeyStore(keyNames);
+console.log('====== add items =======');
 
-console.log('\n====== add items =======');
-
-var item = {
+item = {
 	name: 'bob'
 	, city: 'nyc'
 	, data: 'this is bob in nyc'
@@ -39,8 +48,8 @@ store.addItem(item);
 
 console.log('\n====== walk =======');
 
-var walker = store.getWalker();
-var i = 0;
+walker = store.getWalker();
+i = 0;
 while (item = walker.getNextItem()) {
 	console.log(i, item);
 	i += 1;
@@ -51,7 +60,6 @@ while (item = walker.getNextItem()) {
 
 console.log('\n====== getItemForKeyValues =======');
 
-var keyValues;
 keyValues = {city: 'sf', name: 'sue'};
 item = store.getItemForKeyValues(keyValues);
 console.log(keyValues, '==>', item);
@@ -63,3 +71,37 @@ console.log(keyValues, '==>', item);
 keyValues = {city: 'sf', name: 'sam'};
 item = store.getItemForKeyValues(keyValues);
 console.log(keyValues, '==>', item);
+
+console.log('\n====== removeItemWithKeyValues =======');
+
+keyValues = {city: 'sf', name: 'sam'};
+result = store.removeItemWithKeyValues(keyValues);
+console.log('delete', keyValues, '==>', result);
+
+keyValues = {city: 'sf', name: 'sue'};
+result = store.removeItemWithKeyValues(keyValues);
+console.log('delete', keyValues, '==>', result);
+
+keyValues = {city: 'sf', name: 'sue'};
+item = store.getItemForKeyValues(keyValues);
+console.log('get', keyValues, '==>', item);
+
+keyValues = {city: 'nyc', name: 'sam'};
+result = store.removeItemWithKeyValues(keyValues);
+console.log('delete', keyValues, '==>', result);
+
+keyValues = {city: 'nyc', name: 'bob'};
+result = store.removeItemWithKeyValues(keyValues);
+console.log('delete', keyValues, '==>', result);
+
+console.log('\n====== walk =======');
+
+walker.reset();
+i = 0;
+while (item = walker.getNextItem()) {
+	console.log(i, item);
+	i += 1;
+	if (i > 5) {
+		process.exit();		
+	}
+}
